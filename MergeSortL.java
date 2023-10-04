@@ -34,23 +34,23 @@ public class MergeSortL {
         }
         while(q!=-1 && r!=-1){
             if(array[q]>array[r]){
-                int temp = link[r];
+                int temp1 = link[r];
                 int former_temp = r;
-                while(temp!=-1 && array[temp]<=array[q]){
-                    former_temp=temp;
-                    temp=link[temp];
+                while(temp1!=-1 && array[temp1]<=array[q]){
+                    former_temp=temp1;
+                    temp1=link[temp1];
                 }
                 link[former_temp]=q;
-                r=temp;
+                r=temp1;
             }else{
-                int temp = link[q];
+                int temp2 = link[q];
                 int former_temp=q;
-                while( temp!=-1 && array[temp]<=array[r]){
-                    former_temp = temp;
-                    temp=link[temp];
+                while( temp2!=-1 && array[temp2]<=array[r]){
+                    former_temp = temp2;
+                    temp2=link[temp2];
                 }
                 link[former_temp]=r;
-                q=temp;
+                q=temp2;
             }
         }
         return p;
